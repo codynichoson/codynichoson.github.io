@@ -144,7 +144,8 @@ input, select, textarea {
 		}
 
 	body {
-		color: #212931;
+/* 		color: #212931; */
+		color: #301969;
 	}
 
 	body, input, select, textarea {

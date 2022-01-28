@@ -2595,11 +2595,35 @@ input, select, textarea {
 
 /* Image */
 
-	.image {
-		border: 0;
-		display: inline-block;
-		position: relative;
-	}
+		/*side by side images*/
+		.stl-parent {
+			padding:20px;
+		}
+	
+		.stl-child {
+			width: 50%;
+			float:left;
+			padding: 20px;
+			border: 1px solid black;
+		}
+	
+	.row{
+			display: flex;
+		}
+		.column-2{
+			flex: 40%;
+			padding: 8px;
+		}
+		.column-3{
+			flex: 33%;
+			padding: 8px;
+		}
+
+		.image {
+			border: 0;
+			display: inline-block;
+			position: relative;
+		}
 
 		.image img {
 			display: block;

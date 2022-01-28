@@ -3234,7 +3234,7 @@ input, select, textarea {
 		overflow: hidden;
 	}
 
-		#wrapper > .bg {
+		/* #wrapper > .bg {
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -3253,7 +3253,7 @@ input, select, textarea {
 				position: fixed;
 				width: 100vw;
 				height: 100vh;
-			}
+			} */
 
 		#wrapper.fade-in:before {
 			pointer-events: none;

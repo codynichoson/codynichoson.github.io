@@ -78,6 +78,43 @@
                                     intersect the target before crossing a defined goal line.
                                 </p>
 
+                                <h2>System Breakdown</h2>
+								<p> In order to accomplish the task we set out to complete,  we broke it down into three components:
+
+                                    1. Perception - Determine location of the ball relative to the camera
+                                    2. Transforms - Determine location of the ball relative to the robot
+                                    3. Motion Control -  Control the robot to move to the desired location
+                                </p>
+
+                                <h2>Perception</h2>
+								<p> As any successful goalkeeper will tell you; you must keep your eye on the ball! In our case, 
+                                    our "eyes" were an Intel RealSense depth camera mounted directly above the playing area and 
+                                    pointed straight downward and the ball was a red foam ball. 
+
+                                    We used camera data from the RealSense in conjunction with OpenCV and the ROS CvBridge to 
+                                    identify and locate a ball in frame. This was done by thresholding the image to search for red 
+                                    objects that matched the HSV values of our ball. Once a mask image was formed, contours were 
+                                    found around all the red objects in view (ideally just the ball) and any deemed too small were 
+                                    discarded. With the contour around the ball the only thing left in the image, its centroid 
+                                    location (i.e. the ball's location) in the camera frame could be easily determined.
+                                </p>
+
+                                <div class="row">
+									<div class="column-2">
+										<img src="images/realsense.jpeg" alt="" style="width: 100%;"/>
+									</div>
+									<div class="column-2">
+										<img src="images/balltracking.jpeg" style="width: 100%;"/>
+									</div>
+								</div>
+
+                                <div class="column-2">
+                                    <p>Point-of-view of the RealSense camera relative to playing field</p>
+                                </div>
+                                <div class="column-2">
+                                    <p>Screenshot of the ball being tracked in the playing field</p>
+                                </div>
+
                                 <!-- <h2>Initial Design</h2>
 								<p>In this project, we worked backwards from the end goal.
 									Our goal was to deliver force/torque feedback to user's wrist and arm.
@@ -387,7 +424,7 @@
 									<b>Name</b> Acknowledgements
 								</p>
 
-                                <h1><a href="https://github.com/ayerun/VR_Haptics" target="_blank">-View Full Source Code-</a></h1>
+                                <h2><a href="https://github.com/codynichoson/RoboKeeper" target="_blank">-View Source Code-</a></h2>
 							</section>
 
 					</div>

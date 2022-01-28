@@ -1,0 +1,409 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Cody Nichoson - RoboKeeper</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script type="text/javascript" id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+        </script>
+        <script>
+        window.MathJax = {
+            tex: {
+              tags: 'ams'
+            }
+          };
+        </script>
+	</head>
+	<!-- <body class="is-preload"> -->
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="index.html">Projects</a></li>
+							<li> <a href="about.html">About</a></li>
+							<li><a href="https://drive.google.com/file/d/1jMok9cD_30wBrRyt3qo3eG4D5-B8CxcX/view?usp=sharing">Resume</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/codynichoson/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/codynichoson" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date">April 2021 - December 2021</span>
+									<h1>RoboKeeper</h1>
+                                    <p>Created a robotic goalkeeper using computer vision and robotic manipulation.
+									</p>
+                                </header>
+                                
+								<!-- <div class="image main"><img src="images/Haptics/Vr-haptics.jpg" alt="" style="max-width: 70%"/></div> -->
+								<div class="iframe-container">
+									<iframe width="840" height="473" src="https://www.youtube.com/watch?v=7AMiB5leBwY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								</div>
+								<style>
+									.iframe-container {
+										  text-align:center;
+											width:100%;
+									}
+								</style><br/>
+									
+								<h2>Overview</h2>
+								<p> In this group project, my team and I set out to create a robot goalkeeper! 
+                                    The robot used is the Adroit Manipulator Arm manufactured by HDT Global (https://tinyurl.com/ynb82wym). 
+                                    This project involved using computer vision to identify the location of a moving target with a top-down 
+                                    view camera, converting those coordinates into the frame of the robotic arm, and commanding the arm to 
+                                    intersect the target before crossing a defined goal line.
+                                </p>
+
+                                <!-- <h2>Initial Design</h2>
+								<p>In this project, we worked backwards from the end goal.
+									Our goal was to deliver force/torque feedback to user's wrist and arm.
+									We began by thinking about mechanical systems to could produce significant force/torques on the user's arms. 
+									Our plan was to use motor(s) to generate torque and use a linkage to convert the torque into a force or torque felt by the user.
+									The best way to visualize this is by imagining a robotic arm in which the user is holding the end effector (Figure 1).
+									Actuating the motors in the robotic arm, will extert torques/forces on the user's hand.
+									If this robotic arm is stationary in the room, the VR experience is confined to the arm's workspace.
+									If the robotic arm is attached to the user, the VR experience if fully mobile.
+									There are two main complications to this design.
+									The user must carry the weight of the robot, and 
+									the user's body must disperse the reaction forces (the base of the robot will exert forces on the user).
+								</p> -->
+								<!-- <center>
+									<a href="images/Haptics/theoretical_device_full_body.png" target="_blank">
+										<img class="image fit" src="images/Haptics/theoretical_device_full_body.png" alt="" style="width: 20%; height: 20%;"/>
+									</a>
+								</center>
+								<div class="align center">
+									<p class="image center"><b>Figure 1.</b> Rendering of the theoretical device initially designed. 
+										Motors in the linkage could be actuated to exert torques/forces on the user's wrist and arm. 
+									</p>
+								</div><br/> -->
+								<!-- <p>	
+									From a software and controls standpoint, the primary concern is the VR tracking frequency.
+									The maximum stiffness of a haptically rendered surface depends on the speed of the controller.
+									The <a href="https://store.steampowered.com/valveindex" target="_blank">Valve Index</a>, 
+									comes with a state of the art tracking system, 
+									<a href="https://www.vive.com/us/accessory/base-station2/" target="_blank">SteamVR Base Station 2.0</a>.  
+									This tracking system provides data at 144 Hz.
+									This project addresses the following research question.
+									Given a tracking frequency of 144 Hz, what surfaces can be haptically render?
+									The answer to this question is based in both engineering and human psychology.
+								</p>
+								<h2>Materials</h2>
+                                <h4>Hardware Selection</h4>
+                                <p> As mentioned, I am using a 
+									<a href="https://store.steampowered.com/valveindex" target="_blank">Valve Index</a> 
+									with the 
+									<a href="https://www.vive.com/us/accessory/base-station2/" target="_blank">SteamVR Base Station 2.0</a>. 
+									The other primary components needed are motors, encoders, and a motor driver.
+									I decided to use the 
+									<a href="https://uav-en.tmotor.com/html/2021/GLSeries_0225/708.html" target="_blank">T-Motor GL60 KV25</a>. 
+									I chose this motor for the following reasons. 
+									It can deliver high torque at low currents which helps prevent the motor from overheating. 
+									It has a has 14 pole pairs, so rotation is smooth. This is necessary to create compelling haptics.
+									It weighs 230g which is reasonable for the heaviest component of the wearable device. 
+									For the motor driver, I decided to use the 
+									<a href="https://odriverobotics.com/" target="_blank">ODrive</a>. 
+									This motor driver is open-source, so it can be modified if needed. 
+									Also, the ODrive implements field oriented control to smoothly control the motor. 
+									I am using the 
+									<a href="https://ams.com/en/as5048a" target="_blank">AS5048A encoder</a>. 
+									This encoder has 14-bit resolution and is supported by the ODrive.
+                                </p>
+								<h4>Software Selection</h4>
+                                <p> It was difficult to select the software to use for this project.
+									Robots run on Linux, whereas VR runs on Windows. 
+									I settled on using Linux for the following reasons. 
+									This project is primarily a robotic technology exploration not a VR technology exploration.
+									The robotics side of this project will be easier to build upon in the future if this foundation is built Linux.
+									Once the technology is no longer experimental, it can be ported Windows. 
+									The downside to using Linux, is that it is difficult to interact with the VR hardware.
+									Currently, popular game engines, Unity and Unreal Engine, do not support VR development in Linux.
+									I decided to use the 
+									<a href="https://www.khronos.org/registry/OpenXR/specs/1.0/man/html/openxr.html" target="_blank">OpenXR API</a> 
+									directly to interact with the hardware. 
+									I stripped down an 
+									<a href="https://github.com/KhronosGroup/OpenXR-SDK-Source/tree/master/src/tests/hello_xr" target="_blank">OpenXR example render pipeline</a> 
+									for my own use.
+									This project focuses on the sense of touch, so for now I am not rendering to the VR headset. 
+									I am only using the VR setup and render pipeline to access the controller tracking data.
+								</p>
+
+								<h2>Pipeline</h2>
+								<a href="images/Haptics/low_level_haptics_pipeline.png" target="_blank"><img class="image fit" src="images/Haptics/low_level_haptics_pipeline.png" alt="" /></a><br/>
+								<div class="align center">
+									<p class="image center"><b>Figure 2.</b> General software architecture.
+										The application inputs the controller pose and encoder data. 
+										The haptic model determines the torque that should be applied to the motor.
+										The desired torque is sent to the ODrive.
+										The ODrive directly controls the motor.
+									</p>
+								</div><br/>
+								<h4>VR Input</h4>
+								<p>The SteamVR Base Station 2.0 samples controller and headset poses. 
+									The SteamVR runtime converts the data from the SteamVR Base Station into meaningful information.
+									The OpenXR program collects both controller poses as well as the headset pose. <br/><br/>
+									<b>Note on SteamVR Runtime:</b> This is currently the only runtime that can interact with the SteamVR Base Station 2.0. 
+									SteamVR is closed source, and their developement practices (specifically for Linux) are questionable. 
+									For this project, I am using SteamVR version 1.15.12. Also, I disabled SteamVR from connecting to the internet.
+									This is the only way to prevent auto updates. 
+									I recommend using 
+									<a href="https://monado.dev/" target="_blank">Monado</a>, 
+									an open-source runtime, when SteamVR Base Station 2.0 is supported.
+								</p>
+
+								<h4>C++ Application</h4>
+								<p><b>OpenXR Program</b><br/>
+									This part of my application was derived from the 
+									<a href="https://github.com/KhronosGroup/OpenXR-SDK-Source/tree/master/src/tests/hello_xr" target="_blank">hello_xr OpenXR example</a>.  
+									I simplified this code to only the portions needed for this project. 
+									I also added functionality to query the state of the program and retreive necessary information such as controller pose.<br/>
+									<b>Haptic Model</b><br/>
+									The haptic model uses the controller pose and encoder data to calculate the torque that should be applied to the motor. 
+									The code is structured to make the haptic model easily modifiable. 
+									This allows developers to easily experiment when attempting to render various surfaces and textures.<br/>
+									<b>Motor Communication</b><br/>
+									The ODrive comes with a Python-based CLI that serially communicates with the motor driver. 
+									Since my application requires C++ for OpenXR, I implemented a 
+									<a href="https://github.com/ayerun/VR_Haptics/blob/master/include/haptics/motor_communication.hpp" target="_blank">motor communication library</a>  
+									in C++ enabling direct communication with the ODrive.
+								</p>
+
+								<h4>Motor Control</h4>
+								<p>After the C++ application sends a desired torque to the ODrive, the ODrive's control algorithms should handle the direct motor control. 
+									However, I had to modify the hardware and software on the ODrive to enable the torque control mode.
+									The ODrive firmware classifies motors into two categories, high current motors and low current motors. 
+									The T-Motor GL60 KV25 is classified as a low current motor. 
+									The ODrive does not implement torque control for low current motors because it can overheat the ODrive and/or the motor. 
+									To work around this, I replaced the standard shunt resistors on the ODrive with 0.02Ω resistors. 
+									I also modified the shunt resistance value in the firmware to reflect this change.
+								</p>
+
+								<h2>1 Degree of Freedom</h2>
+								<p>Since this project is novel in the domain of VR haptics, I started with a single degree of freedom system. 
+									There were two goals during this stage of the project. The first was to implement the software pipeline previous mentioned.
+									The second goal was to assess the ability to haptically render surfaces using encoder data and using VR tracking data. 
+									The plan was to haptically render a wall using the model of a spring. Hooke's Law states: $$F_s = -kx$$
+									\(F_s\) is the spring force [N]<br/>
+									k is the spring constant [N/m]<br/>
+									x is the displacement [m]<br/><br/>
+									My system only produces torque, so I modified the equation.
+									$$T_m = -k&theta;$$
+									\(T_m\) is the motor torque [Nm]<br/>
+									k is the spring constant [\(\frac{Nm}{degrees}\)]<br/>
+									\(&theta;\) is the displacement [degrees]<br/><br/>
+								</p>
+								<h4>VR Tracking vs. Encoder Feedback</h4>
+								<p>The C++ application received encoder data at a frequency of 490 Hz. 
+									Using only the encoder feedback I was able to render walls with very high stiffness and little instability. 
+									Instability only occured when the user held the controller exactly at the wall boundary.
+									The VR tracking data came in at 144 Hz. Using the tracking data feedback I was able to render walls at low stiffness with little instability. 
+									At this low stiffness the "wall" did not feel like a wall. At medium stiffness there was significant instability at the wall boundary, but the wall felt realistic.
+								</p>
+								<div class="row">
+									<div class="column-2">
+										<img src="images/Haptics/encoder_2nm_deg.gif" alt="" style="width: 100%;"/>
+									</div>
+									<div class="column-2">
+										<img src="images/Haptics/vr_02nm_deg.gif" style="width: 100%;"/>
+									</div>
+								</div>
+								<div class="align center">
+									<p class="image center" style="font-size: 13.5px;"><b>Figure 3.</b> 
+									The left is a rendered wall with stiffness 2 \(\frac{Nm}{deg}\) using encoder feedback.<br/>
+									The right is a rendered wall with stiffness 0.2 \(\frac{Nm}{deg}\) using tracking feedback.<br/>
+									The encoder produces minimal jitter at the wall boundary, but the tracking data produces significant jitter.
+									</p>
+								</div><br/>
+
+								<h4>Determining the Cause of Instability</h4>
+								<p> The results above did not confirm that compelling haptics are feasible given the bottleneck tracking frequency. 
+									In order to create compelling haptics using the tracking data, I needed to determine the cause of the instability. 
+									I did this by limiting the encoder data frequency to 144 Hz. Even with a throttled frequency there was not significant instability at the wall boundary. 
+									Then, I added gaussian noise to the encoder data. Doing this made the walls rendered using encoder data feel like the walls rendered using VR tracking data. 
+								</p>
+								
+								<h4>Filtering</h4>
+								<p>Due to the noise in the tracking data, I decided to filter the controller pose. 
+									I used the following exponential smoothing function as a low pass filter:
+									$$s_0 = x_0$$
+									$$s_n = &alpha;x_n+(1-&alpha;)s_{n-1}$$
+									s is the filtered output<br/>
+									x is the unfiltered input<br/>
+									\(&alpha;\) is the smoothing factor<br/><br/>
+									I qualitatively determined \(&alpha;=0.5\) to be the optimal smoothing factor. 
+									You can find the class I made for exponential smoothing 
+									<a href="https://github.com/ayerun/VR_Haptics/blob/master/include/haptics/haptics.hpp#L119" target="_blank">here</a>. 
+									The results convinced me that compelling haptics are feasible using the SteamVR Base Station 2.0
+								</p> -->
+								<!-- <center>
+								<a href="images/Haptics/vr_filtered.gif" target="_blank"><img class="image fit" src="images/Haptics/vr_filtered.gif" alt="" style="width: 50%; height: 50%;"/></a><br/>
+								<div class="align center">
+									<p class="image center"><b>Figure 4.</b> Rendered wall with stiffness 0.2 \(\frac{Nm}{deg}\) using filtered tracking feedback. 
+										There is still some instability at the wall boundary, but it has been significantly reduced
+									</p>
+								</div>
+								</center><br/>
+
+                                <h2>2 Degrees of Freedom</h2>
+								<p>The 1 degree of freedom system confirmed that compelling haptics are feasible. 
+									The next step was to incorporate more freedom of movement. 
+									I put the 1 degree of freedom system on a vertical slider to make a 2 degree of freedom system.
+									Haptics in the 2 degree of freedom system cannot be done with just the encoder. 
+									The VR tracking data is necessary to determine the position of the controller.
+									The VR tracking data or the encoder data could be used to determine the angle of the controller. 
+									In this system, I decided to haptically render a ceiling. 
+									You can imagine the VR controller as a drumstick (extending past the top of the physical controller), and the drumstick tip (cursor) is interacting with the ceiling.
+									As the cursor touches the ceiling, the motor delivers a torque that prevents the drumstick from penetrating the ceiling.
+									I used the following equation to model the ceiling: 
+									$$T_m = -kx$$
+									\(T_m\) is the motor torque [Nm]<br/>
+									k is the spring constant [\(\frac{N}{m}\)]<br/>
+									x is the depth of the cursor into the ceiling squared  [\(m^2\)]<br/><br/>
+									This equation allowed me to express the spring constant in traditional units.
+								</p>
+								<center>
+								<a href="images/Haptics/2dof.gif" target="_blank"><img class="image fit" src="images/Haptics/2dof.gif" alt="" style="width: 70%; height: 70%;"/></a>
+								<div class="align center">
+									<p class="image center"><b>Figure 5.</b> Rendered ceiling with stiffness 700 \(\frac{N}{m}\) using a combination of filtered tracking feedback and encoder feedback.
+									</p>
+								</div>
+								</center><br/>
+                                <h2>6 Degrees of Freedom</h2>
+								<p>The next step was to detach the controller from the vertical rail. 
+									In order to do this, the system needed to become a wearable. 
+									My advisor, Bill Strong, designed and manufactured an arm brace for haptic feedback. 
+									The arm brace disperses motor reaction forces through the user's forearm.
+									This wearable allows the user the move and orient the controller in 3D space.
+								</p>
+
+								<h4>Linkage</h4>
+								<p>A notable feature of the haptic device, is the four bar linkage that attaches the motor to the VR controller. 
+									This linkage provides room for the controller to move vertically without rotating the motor. 
+									However, controller rotation requires motor rotation and vice versa.
+									Therefore, the haptic controls are not significantly affected.
+									The lever arm between the motor and controller is longer, so the user feels slightly less torque.
+									But, the longer lever alligns the motor with the user's wrist.
+									This linkage makes the wearable feel comfortable and natural even though the user can only easily utilize 4 of the typical 6 degrees of freedoms.
+								</p>
+								<center>
+									<a href="images/Haptics/linkage.gif" target="_blank"><img class="image fit" src="images/Haptics/linkage.gif" alt="" style="width: 70%; height: 70%;"/></a>
+									<div class="align center">
+										<p class="image center"><b>Figure 6.</b> Wearable haptic device that can exert a torque about the axis through the user's wrist.
+										</p>
+									</div>
+								</center><br/>
+
+								<h4>Initial Tests</h4>
+								<p>The software for 2 degree of freedom could be used for the new 6 degree of freedom system with minor changes and constraints.
+									First I changed the haptically rendered ceiling to a haptically rendered floor. 
+									I assumed the floor has infinite length and width. 
+									I did not rotate the controller about the axis in line with my arm.
+									This allowed me to test the wearable without significantly modifying the software. 
+									When using the haptic device, it felt almost exactly like a drum.
+									I decided to focus on making a virtual drumming demonstration with haptics.
+									Haptics projects are difficult to portray in videos, so hopefully the example of a drum will help the viewers of this post potentially understand the feeling of the device and some of its applications.
+								</p>
+								<center>
+									<a href="images/Haptics/6dof.gif" target="_blank"><img class="image fit" src="images/Haptics/6dof.gif" alt="" style="width: 70%; height: 70%;"/></a>
+									<div class="align center">
+										<p class="image center"><b>Figure 7.</b> Initial tests of the haptic device. 
+											The haptic model transferred from the 2 degree of freedom system made the suface feel like a drum
+										</p>
+									</div>
+								</center><br/>
+
+								<h4>Drum Kit Haptic Model</h4>
+								<p>After testing the haptic device, I started to modify the software to fully utilize all 6 degrees of freedom.
+									In the 2 degree of freedom system, tracking the cursor (or drumstick tip) was simple trigonometry.
+									All you needed to know was the controller height and angle.
+									In the 6 degree of freedom system, tracking the cursor is more complicated. 
+									I set up transformation matricies to define a world frame and track the controller and cursor frames.
+									I defined the world frame using the initial controller pose when the program starts. 
+									The controller is then tracked in reference to the world frame. 
+									The cursor is defined as a static transformation from the controller frame. 
+									Therefore, the controller and cursor move together.
+									The final step was to define drum surfaces.
+									I created a 
+									<a href="https://github.com/ayerun/VR_Haptics/blob/master/include/haptics/haptics.hpp#L60" target="_blank">drum object</a> in C++.
+									The rectangular volume of each drum is defined using a center coordinate (x,y,z), a lenth, and a width.
+									The surface starts at the center z coordinate, and extends downward infinitely.
+									Each drum surface has an associated spring constant to simulate different drums.
+									The drum objects also contain methods and parameters that are used for drum systhesis.
+                                </p>
+
+								<h4>Drum Synthesis</h4>
+								<p>In order to make a virtual drum demonstration, I needed to synthesize a drum sound.
+									To do this, I used 
+									<a href="https://puredata.info/" target="_blank"></a>Pure Data</a>. 
+									Pure Data is an open-source visual programming language that specializes in audio digitial signal processing.
+									In Pure Data, I used samples of various drums and played the sample everytime the cursor contacted the drum. 
+									To make the sound more realistic, I multiplied the sampled drum sound with an ADSR (attack, decay, sustain, release) envelope.
+									I used parameters from my application to modify the envelope.
+									The cursor velocity amplifies the drum sound.
+									The cursor/drum contact point determines the sustain of the drum sound.
+									For example, if you hit the drum as hard as you can directly at the center point, the drum sound is loud and sustains for a long time.
+									I implemented a communication protocol and utilized a TCP port to send data from the C++ application to the drum synthesizer.
+								</p> -->
+								
+								<!-- <div class="iframe-container">
+									<iframe width="840" height="473" src="#" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								</div>
+								<style>
+									.iframe-container {
+										  text-align:center;
+											width:100%;
+									}
+								</style><br/> -->
+								
+								<h2>Results</h2>
+								<p>Write conclusion here</p>
+
+								<h2>Acknowledgements</h2>
+								<p>
+									<b>Name</b> Acknowledgements
+								</p>
+
+                                <h1><a href="https://github.com/ayerun/VR_Haptics" target="_blank">-View Full Source Code-</a></h1>
+							</section>
+
+					</div>
+
+				<!-- Copyright -->
+					<div id="copyright">
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

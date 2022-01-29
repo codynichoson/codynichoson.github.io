@@ -105,7 +105,8 @@ input, select, textarea {
 /* 		Northwestern Purple */
 /* 		background-color: #4E2A84; */
 	
-		background: linear-gradient(#4E2A84, #000000);
+		background: linear-gradient(145deg, #4E2A84 40%, #000000);
+
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {

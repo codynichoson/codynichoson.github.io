@@ -1,1 +1,164 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Cody Nichoson - Wand Painting</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
+        <!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script type="text/javascript" id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+        </script>
+        <script>
+        window.MathJax = {
+            tex: {
+              tags: 'ams'
+            }
+          };
+        </script> -->
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<!-- <div id="wrapper"> -->
+
+				<!-- Header -->
+					<header id="header">
+                        <a href="index.html" class="logo">Cody Nichoson</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="index.html">Projects</a></li>
+							<li> <a href="about.html">About</a></li>
+							<li><a href="https://drive.google.com/file/d/1jMok9cD_30wBrRyt3qo3eG4D5-B8CxcX/view?usp=sharing">Resume</a></li>
+							<li><a href="contact.html">Contact</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/codynichoson/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/codynichoson" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<!-- <span class="date">April 2021 - December 2021</span> -->
+									<h1>Infrared Wand Painting</h1>
+                                    <p>Created an interactive wand experience using an infrared camera and computer vision.
+									</p>
+                                </header>
+                                
+								<div class="image main"><img src="images/drawname.gif" alt="" style="max-width: 70%"/></div>
+<!-- 								<div class="iframe-container">
+									<iframe width="853" height="480" src="https://www.youtube.com/embed/7AMiB5leBwY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								</div> -->
+								<style>
+									.iframe-container {
+										  text-align:center;
+											width:100%;
+									}
+								</style><br/>
+									
+								<h2>Overview</h2>
+								<p> In this solo project, I set out to create my own version of the interactive wand technology
+                    found at Universal Parks and Resorts. I utilized an Xbox Kinect's infrared capabilities to track
+                    a toy wand with an an infrared reflector attached at its tip. Using computer vision techniques,
+                    I was then able to add a "painting" effect that displays on screen as the user moves their wand around.
+                    The ability to change the drawing color was also added via colored squares on the side of the screen.
+                                </p>
+
+                                <h2>System Breakdown</h2>
+								<p> This project only required a few simple materials:<br><br>
+
+                                    1. Xbox Kinect v2 - The v2 is important! The original Kinect uses an IR technique that is not conducive to this project.<br>
+                                    2. Infrared Reflective Material - Used to make detecting the wand tip easier. Used some small military patch material found online.<br>
+                                    3. OpenCV - The computer vision library used to detect the wand and modify the camera frames.<br>
+                                    4. Toy Wand -  Obviously, I needed something to channel the magic!<br>
+                                </p>
+
+                                <div class="row">
+									<div class="column-2">
+										<center>
+                                            <figure>
+                                                <img src='images/realsense.jpeg' alt='missing' style="width: 100%; height: 100%;"/>
+                                                <figcaption>Point-of-view of the RealSense camera relative to playing field</figcaption>
+                                            </figure>
+										</center>
+									</div>
+									<div class="column-2">
+										<center>
+                                            <figure>
+                                                <img src='images/balltracking.jpeg' alt='missing' style="width: 100%; height: 100%;"/>
+                                                <figcaption>Screenshot of the ball being tracked in the playing field</figcaption>
+                                            </figure>
+										</center>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="column-2">
+										<div class="iframe-container">
+											<iframe width="320" height="240" src="https://www.youtube.com/embed/yBchUAPhLoM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+										</div>
+										<style>
+											.iframe-container {
+												  text-align:center;
+													width:100%;
+											}
+										</style><br/>
+									</div>
+									<div class="column-2">
+										<center>
+                                            <p>This brief video demonstrates the use of OpenCV to locate the ball and 
+												determine the location of its centroid. Once determined, the ball is 
+												marked at its centroid and a bounding box placed around it.</p>
+										</center>
+									</div>
+								</div>
+                
+<!-- 								<center>
+									<img src='images/robokeeper_team.jpg' alt='missing' style="width: 100%; height: 100%;"/>
+								</center> -->
+
+								<!-- <h2>Results</h2>
+								<p>Write conclusion here</p>
+								<h2>Acknowledgements</h2>
+								<p>
+									<b>Name</b> Acknowledgements
+								</p> -->
+
+                                <h1 style="text-align:center"><a href="https://github.com/codynichoson/WandPainting" target="_blank">View Source Code</a></h1>
+							</section>
+
+					</div>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Cody Nichoson</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			<!-- </div> -->
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -49,10 +49,20 @@
 									</p>
                                 </header>
                                 
-								<div class="image main"><img src="images/quadrotor1.gif" alt="" style="max-width: 70%"/></div>
-								<!-- <center>
-									<div class="image main"><img src="images/changing_colors1.gif" alt="" style="max-width: 60%"/></div>
-								</center> -->
+								<center>
+									<div class="image main"><img src="images/quadrotor1.gif" alt="" style="max-width: 70%"/></div>
+								</center>
+
+								<h2>Overview</h2>
+								<p> This project began with a Raspberry Pi, a Wi-Fi card, an IMU, and a small quadrotor chassis kit. 
+									After assembling the quadrotor, the IMU data was programmed to first calibrate its values
+									based of an average of the first thousand measurements. The IMU data was then interpreted and 
+									used to create flight controllers for the four motors. The controllers were created in a systematic 
+									fashion, isolating each degree of freedom (pitch, roll, and yaw) and building up each P, D, and I 
+									controller sequentially to demonstrate their respective benefits both when isolated and when working 
+									together. A game controller was programmed to both command the quadrotor and perform various actions 
+									like pausing, calibrating, and resuming flight.
+                                </p>
 
                                 <h1 style="text-align:center"><a href="https://github.com/codynichoson/DroneProject" target="_blank">View on GitHub!</a></h1>
                             </section>

@@ -28,7 +28,7 @@
 							<li class="active"><a href="index.html">Projects</a></li>
 							<li> <a href="about.html">About</a></li>
 							<li><a href="https://drive.google.com/file/d/1JoNxl4a-S4uxP-2B-WNmEsnj6YRnCAHO/view?usp=sharing">Resume</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<!-- <li><a href="contact.html">Contact</a></li> -->
 						</ul>
 						<ul class="icons">
 							<li><a href="https://www.linkedin.com/in/codynichoson/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
@@ -77,102 +77,6 @@
 									}
 								</style><br/>
 
-                                <!-- <h2>System Breakdown</h2>
-								<p> In order to accomplish the task we set out to complete,  we broke it down into three components:<br><br>
-
-                                    1. Perception - Determine location of the ball relative to the camera<br>
-                                    2. Transforms - Determine location of the ball relative to the robot<br>
-                                    3. Motion Control -  Control the robot to move to the desired location<br>
-                                </p>
-
-                                <h2>Perception</h2>
-								<p> As any successful goalkeeper will tell you; you must keep your eye on the ball! In our case, 
-                                    our "eyes" were an Intel RealSense depth camera mounted directly above the playing area and 
-                                    pointed straight downward and the ball was a red foam ball. <br><br>
-
-                                    We used camera data from the RealSense in conjunction with OpenCV and the ROS CvBridge to 
-                                    identify and locate a ball in frame. This was done by thresholding the image to search for red 
-                                    objects that matched the HSV values of our ball. Once a mask image was formed, contours were 
-                                    found around all the red objects in view (ideally just the ball) and any deemed too small were 
-                                    discarded. With the contour around the ball the only thing left in the image, its centroid 
-                                    location (i.e. the ball's location) in the camera frame could be easily determined.
-                                </p>
-
-                                <div class="row">
-									<div class="column-2">
-										<center>
-                                            <figure>
-                                                <img src='images/realsense.jpeg' alt='missing' style="width: 100%; height: 100%;"/>
-                                                <figcaption>Point-of-view of the RealSense camera relative to playing field</figcaption>
-                                            </figure>
-										</center>
-									</div>
-									<div class="column-2">
-										<center>
-                                            <figure>
-                                                <img src='images/balltracking.jpeg' alt='missing' style="width: 100%; height: 100%;"/>
-                                                <figcaption>Screenshot of the ball being tracked in the playing field</figcaption>
-                                            </figure>
-										</center>
-									</div>
-								</div>
-
-								<div class="row">
-									<div class="column-2">
-										<div class="iframe-container">
-											<iframe width="320" height="240" src="https://www.youtube.com/embed/yBchUAPhLoM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-										</div>
-										<style>
-											.iframe-container {
-												  text-align:center;
-													width:100%;
-											}
-										</style><br/>
-									</div>
-									<div class="column-2">
-										<center>
-                                            <p>This brief video demonstrates the use of OpenCV to locate the ball and 
-												determine the location of its centroid. Once determined, the ball is 
-												marked at its centroid and a bounding box placed around it.</p>
-										</center>
-									</div>
-								</div>
-
-								<h2>Transforms</h2>
-								<p> Knowing the location of the ball within the frame of the camera is great, 
-									but it alone didn't help our robot much. In order to convert the ball coordinates 
-									in the camera frame into corresponding coordinates in the robot frame, some coordinate 
-									transformations were necessary.<br><br>
-
-									In our particular setup, we know where the ball is relative to the camera (calculated 
-									in the perception algorithm), but we needed something additional to link the camera's 
-									location to the robot's location. The solution that provided this link was an AprilTag 
-									(seen just below the goal in the above right image). This AprilTag could be detected 
-									by the camera and its location relative to the camera determined via its associated software.
-									Then, by hand-measuring the location of the AprilTag relative to the base of the robot, 
-									we then had the complete set of frame relationships necessary to calculate the location 
-									of the ball relative to the robot.
-                                </p>
-
-								<h2>Motion Control</h2>
-								<p> Finally, after determining the location of the ball relative to the robot's frame, 
-									the robot can then be controlled to accomplish our goal. The end-effector of the 
-									Adroit arm is programmed to essentially mirror the y-coordinate of the ball as it 
-									moves towards it while maintaining a fixed distance between itself and the goal. The 
-									Adroit's joint angles corresponding with these various y-coordinates along the front 
-									of the goal were recorded in a lookup table at a resolution of 1 cm. Essentially, this 
-									means that the ball's current y-coordinate in time is matched to the nearest y-coordinate 
-									in the lookup table, and the corresponding joint angles are directly published to the Adroit.<br><br>
-
-									The final result is a fun, interactive goalkeeping robot that is surprisingly challenging to defeat!
-                                </p>
-
-								<h3>The RoboKeeper Team!</h3>
-								<center>
-									<img src='images/robokeeper_team.jpg' alt='missing' style="width: 100%; height: 100%;"/>
-								</center>
-
-                                <h1 style="text-align:center"><a href="https://github.com/codynichoson/RoboKeeper" target="_blank">View on GitHub!</a></h1> -->
 							</section>
 
 					</div>

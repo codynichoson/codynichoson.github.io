@@ -15,17 +15,25 @@
 		<style>
 			.button {
 			  border: none;
-			  color: white;
+			  color: white !important; 
 			  padding: 15px 32px;
 			  text-align: center;
 			  text-decoration: none;
 			  display: inline-block;
 			  font-size: 16px;
-			  margin: 4px 2px;
+			  margin: 30px 2px;
 			  cursor: pointer;
+			  display: inline-flex;
+  			  align-items: center;
+			  transition-duration: 0.4s;
+			}
+
+			.button:hover {
+			  background-color: #4E2A84;
+			  color: white;
 			}
 			
-			.button1 {background-color: #4CAF50;} /* Green */
+			.button1 {background-color: #4E2A84;} /* Purple */
 			.button2 {background-color: #008CBA;} /* Blue */
 			</style>
 
@@ -60,17 +68,13 @@
 								<header class="major">
 									<h2>Resume</h2>
                                 </header>
-
-								<!-- <p style="text-align: center;">
-									Click "Pop-out" button in viewing window to download.<br>
-								</p> -->
-
-								<!-- <a href="pat" download="proposed_file_name">Download</a> -->
-
-								<button class="button button1" href="/images/allegro_hand_moving.gif" download="FILENAME">Green</button>
-                                
+								
+								<center>
+									<a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1FBtd67sQxQeJSgdby5tHKh5SvlWQES-i/view"><button class="button button1">Download</button></a>
+								</center>
+								
 								<div class="iframe-container">
-									<iframe src="https://drive.google.com/file/d/1FBtd67sQxQeJSgdby5tHKh5SvlWQES-i/preview" width="800" height="1100" allow="autoplay"></iframe>
+									<iframe src="https://drive.google.com/file/d/1FBtd67sQxQeJSgdby5tHKh5SvlWQES-i/preview" width="800" height="1050" allow="autoplay"></iframe>
 								</div>
 
 								<style>

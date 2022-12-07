@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Cody Nichoson - Automated Biomimetic Fingertip Deformation Testing System</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- <div id="wrapper" ></div> -->
+
+				<!-- Header -->
+					<header id="header">
+                        <a href="index.html" class="logo">Cody Nichoson</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="index.html">Projects</a></li>
+							<li> <a href="about.html">About</a></li>
+							<li><a href="resume.html">Resume</a></li>
+							<!-- <li><a href="contact.html">Contact</a></li> -->
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/codynichoson/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/codynichoson" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>Automated Biomimetic Fingertip Deformation Testing System</h1>
+                                    <p>Created automated system for gathering biomimetic fingertip motion data and the associated deformation characteristics.
+									</p>
+                                </header>
+                                
+								<center>
+									<div class="image main"><img src="images/fingerrig_3x_speed_labeled.gif" alt="" style="max-width: 70%"/></div>
+								</center>
+								
+								<!-- <div class="iframe-container">
+									<iframe width="853" height="480" src="https://www.youtube.com/embed/7AMiB5leBwY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								</div>
+								<style>
+									.iframe-container {
+										  text-align:center;
+											width:100%;
+									}
+								</style><br/> -->
+									
+								<h2>Overview</h2>
+								<p> In this solo project, I worked with Northwestern University professors, 
+									<a href="https://robotics.northwestern.edu/people/profiles/faculty/elwin-matt.html">Dr. Matthew Elwin</a>, 
+									<a href="https://www.mccormick.northwestern.edu/research-faculty/directory/profiles/colgate-edward.html">Dr. Ed Colgate</a>, and
+									<a href="https://www.mccormick.northwestern.edu/research-faculty/directory/profiles/lynch-kevin.html">Dr. Kevin Lynch</a>
+									to help further their goal of investigating the properties of ideal biomimetic fingers and their ability 
+									to interact with their environment.<br><br>
+
+									This project used a Franka Emika Panda robotic manipulator arm to control a clear sliding platform as it
+									interacted with a prototype silicone biomimetic fingertip. A high resolution camera was fixed below the platform
+									looking upwards through it at the tip of the finger and an embedded fiducial pattern. The motion profiles of 
+									the robot and the detected fiducial pattern changes provide useful information about the prototype finger
+									and its material behavior when interacting with a surface.<br><br>
+                                </p>
+
+                                <h2>System Breakdown</h2>
+								<p> This project utilized a number of different libraries and drivers, but the core components of my package
+									are the following:<br><br>
+
+                                    1. Vision - Identifying the fingertip and fiducial pattern, and tracking the motion of the fiducials<br>
+                                    2. Motion Control - Controlling the motion of the Franka robot and providing a use interface<br>
+                                </p>
+
+                                <!-- <h2>Vision</h2>
+								<p> 
+                                </p> -->
+
+                                <!-- <div class="row">
+									<div class="column-2">
+										<center>
+                                            <figure>
+                                                <img src='images/realsense.jpeg' alt='missing' style="width: 100%; height: 100%;"/>
+                                                <figcaption>Point-of-view of the RealSense camera relative to playing field</figcaption>
+                                            </figure>
+										</center>
+									</div>
+									<div class="column-2">
+										<center>
+                                            <figure>
+                                                <img src='images/balltracking.jpeg' alt='missing' style="width: 100%; height: 100%;"/>
+                                                <figcaption>Screenshot of the ball being tracked in the playing field</figcaption>
+                                            </figure>
+										</center>
+									</div>
+								</div> -->
+
+								<!-- <div class="row">
+									<div class="column-2">
+										<div class="iframe-container">
+											<iframe width="320" height="240" src="https://www.youtube.com/embed/yBchUAPhLoM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+										</div>
+										<style>
+											.iframe-container {
+												  text-align:center;
+													width:100%;
+											}
+										</style><br/>
+									</div>
+									<div class="column-2">
+										<center>
+                                            <p>This brief video demonstrates the use of OpenCV to locate the ball and 
+												determine the location of its centroid. Once determined, the ball is 
+												marked at its centroid and a bounding box placed around it.</p>
+										</center>
+									</div>
+								</div> -->
+
+								<!-- <h2>Motion Control</h2>
+								<p> 
+                                </p> -->
+
+								<!-- <h3>The RoboKeeper Team!</h3>
+								<center>
+									<img src='images/robokeeper_team.jpg' alt='missing' style="width: 100%; height: 100%;"/>
+								</center> -->
+
+                                <h1 style="text-align:center"><a href="https://github.com/codynichoson/FingerTestingRig" target="_blank">View on GitHub!</a></h1>
+							</section>
+
+					</div>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Cody Nichoson</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+		<!-- </div> -->
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

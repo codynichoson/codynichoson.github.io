@@ -131,31 +131,43 @@
 
                                 <h2>Package Breakdown</h2>
 								<p> This project was created in the form of a ROS2 package written primarily in C++. For organization, the various
-									components of the project were broken up into four individual ROS2 packages, each with a specialized function:
+									components of the project were broken up into four individual ROS2 packages, each with a specialized function:</p>
 
 								<ul>
 									<li style="color:black;font-size:16px;font-weight:bold">finger_rig_description</li>
-										<ul>
-											<li style="color:black;font-size:16px">This package contains the Rviz configuration file for visualizing 
-												both the Franka arm and the computer vision aspects of the project.</li>
-										</ul>
+									<p>This package contains the Rviz configuration file for visualizing both the Franka arm and the computer vision 
+										aspects of the project.</p>
                                     <li style="color:black;font-size:16px;font-weight:bold">finger_rig_bringup</li>
-										<ul>
-											<li style="color:black;font-size:16px">This package primarily contains the launch files necessary to run 
-												all of the necessary nodes, controllers, and configurations.</li>
-										</ul>
+									<p>This package primarily contains the launch files necessary to run all of the necessary nodes, controllers, 
+										and configurations.</p>
 									<li style="color:black;font-size:16px;font-weight:bold">finger_rig_msgs</li>
-										<ul>
-											<li style="color:black;font-size:16px">This package contains a few custom service types used for the project.</li>
-										</ul>
+									<p>This package contains a few custom service types used for supplying commands to the robot.</p>
 									<li style="color:black;font-size:16px;font-weight:bold">finger_rig_control</li>
-										<ul>
-											<li style="color:black;font-size:16px">This package contains the bulk of the project in the form of multiple 
-												nodes for perception, motion control, and environmental configuration.</li>
-										</ul>
+									<p>This package contains the bulk of the project in the form of multiple nodes for perception, motion control, 
+										and environmental configuration.</p>
 								</ul>
 
-                                </p>
+								<h2>Motion Control</h2>
+								<p>
+									<center>
+										<div class="image main"><img src="images/franka_services_4x_speed_labeled.gif" alt="" style="max-width: 70%"/></div>
+									</center>
+
+									The motion of the Franka robot was programmed and controlled using the MoveIt2 motion planning framework.
+									The package is centered around a number of ROS2 services that allow the user to interact with and control
+									the robot for the various tasks relevant to the project. Some of these services offered basic functionality
+									for controlling the robot such as sending the arm to its home pose and opening and closing the gripper.
+									<br><br>
+									The remaining ROS2 services provided in the package serve to provide various motion profiles for the biomimetic
+									finger to be actuated against. These motion profile services all start by first gripping the sliding platform
+									that the biomimetic fingertip is resting against, then manipulating this platform to simulate as if the fingertip
+									was sliding against a stationary platform in the specified motion profile. 
+									<br><br>
+									The reasoning for fixing the fingertip in place and actuating the platform rather than the reverse was to keep 
+									the fingertip firmly in frame of the fixed camera below the platform. Due to the minute detail needed to capture
+									the deformation and slip characteristics of the fingertip, it made more sense to ensure the fingertip remained
+									squarely in the camera's view.
+								</p>
 
                                 <!-- <h2>Vision</h2>
 								<p> 

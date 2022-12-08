@@ -72,15 +72,89 @@
 									interacted with a prototype silicone biomimetic fingertip. A high resolution camera was fixed below the platform
 									looking upwards through it at the tip of the finger and an embedded fiducial pattern. The motion profiles of 
 									the robot and the detected fiducial pattern changes provide useful information about the prototype finger
-									and its material behavior when interacting with a surface.<br><br>
+									and its material behavior when interacting with a surface.
                                 </p>
 
-                                <h2>System Breakdown</h2>
-								<p> This project utilized a number of different libraries and drivers, but the core components of my package
-									are the following:<br><br>
+								<h2>Hardware</h2>
+								<ul>
+									<li style="color:black;font-size:16px">Franka Emika Panda Manipulator Arm</li>
+									<li style="color:black;font-size:16px">Allied Vision Alvium 1800 U-500c Color Camera</li>
+								</ul>
 
-                                    1. Vision - Identifying the fingertip and fiducial pattern, and tracking the motion of the fiducials<br>
-                                    2. Motion Control - Controlling the motion of the Franka robot and providing a use interface<br>
+								<h2>Software</h2>
+								<ul>
+									<li style="color:black;font-size:16px;font-weight:bold">General</li>
+										<ul>
+											<li style="color:black;font-size:16px">Ubuntu 22.04</li>
+											<li style="color:black;font-size:16px">ROS2 Humble Hawksbill</li>
+										</ul>
+									<li style="color:black;font-size:16px;font-weight:bold">Franka Manipulator Arm</li>
+										<ul>
+											<li style="color:black;font-size:16px">MoveIt2</li>
+											<li style="color:black;font-size:16px">franka_ros2 (ROS2 driver for Franka</li>
+										</ul>
+									<li style="color:black;font-size:16px;font-weight:bold">Allied Vision Camera</li>
+										<ul>
+											<li style="color:black;font-size:16px">OpenCV 4.6.0</li>
+											<li style="color:black;font-size:16px">cv_bridge</li>
+											<li style="color:black;font-size:16px">Vimba SDK 6.0.0 (interface for camera)</li>
+											<li style="color:black;font-size:16px">avt_vimba_camera (ROS2 wrapper for Vimba SDK)</li>
+										</ul>									
+								</ul>
+
+								<h2>Franka Emika Manipulator Arm</h2>
+								<center>
+									<a href="https://www.mathworks.com/products/connections/product_detail/franka-emika-robots.html" target="_blank">
+										<div class="image main"><img src="images/franka.jpg" alt="" style="max-width: 70%"/></div>
+									</a>
+								</center>
+
+								The Franka Emika Panda manipulator arm is a popular research-oriented 7-DOF robotic arm design to be compliant
+								and capable of safe interaction in human environments. It served as an ideal actuator in this project due to its
+								availability in the lab and its relatively easy user interface through the franka_ros2 package that serves to
+								integrate the libfranka library into ROS2.
+
+								<br><br>
+
+								<h2>Allied Vision Camera</h2>
+								<center>
+									<a href="https://www.edmundoptics.com/p/allied-vision-alvium-1800-u-500c-125-50mp-c-mount-usb-31-color-camera/42324/" target="_blank">
+										<div class="image main"><img src="images/alliedvisioncam.jpg" alt="" style="max-width: 70%"/></div>
+									</a>
+								</center>
+
+								The camera selected for this project was an Allied Vision Alvium 1800 U-500c Color Camera. In order to capture and
+								measure the slip and deformation of a biomimetic fingertip, a camera with high resolution and frame rate was desired.
+								The resolution for the chosen camera is 2,592 x 1,944 and it is capable of capturing images at 67 frames per second.
+
+								<br><br>
+
+                                <h2>Package Breakdown</h2>
+								<p> This project was created in the form of a ROS2 package written primarily in C++. For organization, the various
+									components of the project were broken up into four individual ROS2 packages, each with a specialized function:
+
+								<ul>
+									<li style="color:black;font-size:16px;font-weight:bold">finger_rig_description</li>
+										<ul>
+											<li style="color:black;font-size:16px">This package contains the Rviz configuration file for visualizing 
+												both the Franka arm and the computer vision aspects of the project.</li>
+										</ul>
+                                    <li style="color:black;font-size:16px;font-weight:bold">finger_rig_bringup</li>
+										<ul>
+											<li style="color:black;font-size:16px">This package primarily contains the launch files necessary to run 
+												all of the necessary nodes, controllers, and configurations.</li>
+										</ul>
+									<li style="color:black;font-size:16px;font-weight:bold">finger_rig_msgs</li>
+										<ul>
+											<li style="color:black;font-size:16px">This package contains a few custom service types used for the project.</li>
+										</ul>
+									<li style="color:black;font-size:16px;font-weight:bold">finger_rig_control</li>
+										<ul>
+											<li style="color:black;font-size:16px">This package contains the bulk of the project in the form of multiple 
+												nodes for perception, motion control, and environmental configuration.</li>
+										</ul>
+								</ul>
+
                                 </p>
 
                                 <!-- <h2>Vision</h2>

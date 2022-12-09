@@ -310,7 +310,49 @@
 										</div>
 									</div>
 	
+									<!-- <br><br> -->
+								</p>
+
+								<h2>Results</h2>
+
+								<p>
+									This package was ultimately applied on a real Franka Emika Panda manipulator arm actuating the sliding platform
+									from the test fixture. Though the fiducial tracking on the prototype finger needs some adjustment to better track
+									in non-ideal lighting conditions, the fundamental abilities of the system were shown to be functional and working
+									as intended.
 									<br><br>
+									With the package running, the user can use the various services provided by the <i>motion_control</i> node to control
+									the robot and perform various motion profiles with the testing rig platform. While the robot is running, the <i>vision</i>
+									node is identifying and tracking the fiducial pattern dots on the tip of the prototype finger and displaying these tracked
+									locations in the terminal. This system may serve as the first step in further investigations into the relationship between
+									manipulation and the deformation characteristics of a prototype fingertip, and ultimately may assist in the creation of
+									newer biomimetic fingers that provide desirable material properties.
+									<div class="row">
+										<div class="column-2">
+											<center>
+												<figure>
+													<img src='images/wideview_linear_labeled.gif' alt='missing' style="width: 100%;"/>
+													<figcaption>Franka performing a linear motion profile (feat. a wobbly table)</figcaption>
+												</figure>
+											</center>
+										</div>
+										<div class="column-2">
+											<center>
+												<figure>
+													<img src='images/closeup_linear_labeled.gif' alt='missing' style="width: 100%;"/>
+													<figcaption>Franka performing londer linear motion profile</figcaption>
+												</figure>
+											</center>
+										</div>
+									</div>
+
+									<center>
+										<figure>
+											<img src='images/fingerrig_3x_speed_labeled.gif' alt='missing' style="width: 70%;"/>
+											<figcaption>Upward view of the finger deforming during a manipulation motion profile</figcaption>
+										</figure>
+									</center>
+
 								</p>
 
                                 <h1 style="text-align:center"><a href="https://github.com/codynichoson/FingerTestingRig" target="_blank">View on GitHub!</a></h1>

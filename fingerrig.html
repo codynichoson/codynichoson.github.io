@@ -60,49 +60,26 @@
 									}
 								</style><br/> -->
 									
+								<hr>
 								<h2>Overview</h2>
-								<p> In this solo project, I worked with Northwestern University professors, 
-									<a href="https://robotics.northwestern.edu/people/profiles/faculty/elwin-matt.html" target="_blank">Dr. Matthew Elwin</a>, 
-									<a href="https://www.mccormick.northwestern.edu/research-faculty/directory/profiles/colgate-edward.html" target="_blank">Dr. Ed Colgate</a>, and
-									<a href="https://www.mccormick.northwestern.edu/research-faculty/directory/profiles/lynch-kevin.html" target="_blank">Dr. Kevin Lynch</a>
-									to help further their goal of investigating the properties of ideal biomimetic fingers and their ability 
-									to interact with their environment.<br><br>
+								In this solo project, I worked with Northwestern University professors, 
+								<a href="https://robotics.northwestern.edu/people/profiles/faculty/elwin-matt.html" target="_blank">Dr. Matthew Elwin</a>, 
+								<a href="https://www.mccormick.northwestern.edu/research-faculty/directory/profiles/colgate-edward.html" target="_blank">Dr. Ed Colgate</a>, and
+								<a href="https://www.mccormick.northwestern.edu/research-faculty/directory/profiles/lynch-kevin.html" target="_blank">Dr. Kevin Lynch</a>
+								to help further their goal of investigating the properties of ideal biomimetic fingers and their ability 
+								to interact with their environment.
+								<br><br>
+								This project used a Franka Emika Panda robotic manipulator arm to control a clear sliding platform as it
+								interacted with a prototype silicone biomimetic fingertip. A high resolution camera was fixed below the platform
+								looking upwards through it at the tip of the finger and an embedded fiducial pattern. The motion profiles of 
+								the robot and the detected fiducial pattern changes provide useful information about the prototype finger
+								and its material behavior when interacting with a surface.
 
-									This project used a Franka Emika Panda robotic manipulator arm to control a clear sliding platform as it
-									interacted with a prototype silicone biomimetic fingertip. A high resolution camera was fixed below the platform
-									looking upwards through it at the tip of the finger and an embedded fiducial pattern. The motion profiles of 
-									the robot and the detected fiducial pattern changes provide useful information about the prototype finger
-									and its material behavior when interacting with a surface.
-                                </p>
+								<hr>
 
 								<h2>Hardware</h2>
-								<ul>
-									<li style="color:black;font-size:16px">Franka Emika Panda Manipulator Arm</li>
-									<li style="color:black;font-size:16px">Allied Vision Alvium 1800 U-500c Color Camera</li>
-								</ul>
 
-								<h2>Software</h2>
-								<ul>
-									<li style="color:black;font-size:16px;font-weight:bold">General</li>
-										<ul>
-											<li style="color:black;font-size:16px">Ubuntu 22.04</li>
-											<li style="color:black;font-size:16px">ROS2 Humble Hawksbill</li>
-										</ul>
-									<li style="color:black;font-size:16px;font-weight:bold">Franka Manipulator Arm</li>
-										<ul>
-											<li style="color:black;font-size:16px">MoveIt2</li>
-											<li style="color:black;font-size:16px">franka_ros2 (ROS2 driver for Franka</li>
-										</ul>
-									<li style="color:black;font-size:16px;font-weight:bold">Allied Vision Camera</li>
-										<ul>
-											<li style="color:black;font-size:16px">OpenCV 4.6.0</li>
-											<li style="color:black;font-size:16px">cv_bridge</li>
-											<li style="color:black;font-size:16px">Vimba SDK 6.0.0 (interface for camera)</li>
-											<li style="color:black;font-size:16px">avt_vimba_camera (ROS2 wrapper for Vimba SDK)</li>
-										</ul>									
-								</ul>
-
-								<h2>Franka Emika Manipulator Arm</h2>
+								<h3>Franka Emika Manipulator Arm</h3>
 								<center>
 									<a href="https://www.mathworks.com/products/connections/product_detail/franka-emika-robots.html" target="_blank">
 										<div class="image main"><img src="images/franka.jpg" alt="" style="max-width: 70%"/></div>
@@ -116,7 +93,7 @@
 
 								<br><br>
 
-								<h2>Allied Vision Camera</h2>
+								<h3>Allied Vision Camera</h3>
 								<center>
 									<a href="https://www.edmundoptics.com/p/allied-vision-alvium-1800-u-500c-125-50mp-c-mount-usb-31-color-camera/42324/" target="_blank">
 										<div class="image main"><img src="images/alliedvisioncam.jpg" alt="" style="max-width: 70%"/></div>
@@ -126,8 +103,82 @@
 								The camera selected for this project was an Allied Vision Alvium 1800 U-500c Color Camera. In order to capture and
 								measure the slip and deformation of a biomimetic fingertip, a camera with high resolution and frame rate was desired.
 								The resolution for the chosen camera is 2,592 x 1,944 and it is capable of capturing images at 67 frames per second.
-
 								<br><br>
+
+								<h3>Fingertip Prototypes</h3>
+								Several iterations of fingertip prototypes were used over the course of this project as the needs of the system
+								became more apparent over time. Effort was focused primarily on functionality within the needs of the testing system
+								as opposed to creating fingertips that more closely mimicked human fingertips. The primary purpose of this project
+								was to create a system that could ultimately be used to compare the properties of various prototypes in efforts to
+								create better biomimetic materials, not necessarily to create those biomimetic materials themselves. A key component
+								of the fingertips that quickly became apparent was the need for some sort of fiducial system on the fingertip to allow
+								for tracking of the fingertip surface as it slipped and deformed during manipulation.
+								<br><br>
+								<center>
+									<figure>
+										<img src='images/fingertip_prototypes.JPG' alt='missing' style="width: 70%; height: 70%;"/>
+										<figcaption>Silicone fingertip and fiducial pattern prototypes</figcaption>
+									</figure>
+								</center>
+								<br><br>
+
+								<h3>Testing Fixture</h3>
+								The physical testing fixture used in this project consisted of the fixed biomimetic fingertip prototype above
+								a high resolution machine vision camera, with a clear acrylic sliding platform positioned between them. The reasoning 
+								for fixing the fingertip in place and actuating the platform rather than the reverse was to keep the fingertip firmly 
+								in frame of the fixed camera below the platform. Due to the minute detail needed to capture the deformation and slip 
+								characteristics of the fingertip, it made more sense to ensure the fingertip remained squarely in the camera's view.
+								<br><br>
+
+								<div class="row">
+									<div class="column-3">
+										<center>
+                                            <figure>
+                                                <img src='images/whole_finger_rig.JPG' alt='missing' style="width: 100%; height: 100%;"/>
+                                                <figcaption>Entire testing rig</figcaption>
+                                            </figure>
+										</center>
+									</div>
+									<div class="column-3">
+										<center>
+                                            <figure>
+                                                <img src='images/top_down_finger_rig.JPG' alt='missing' style="width: 100%; height: 100%;"/>
+                                                <figcaption>Top-down view of finger and camera</figcaption>
+                                            </figure>
+										</center>
+									</div>
+									<div class="column-3">
+										<center>
+                                            <figure>
+                                                <img src='images/bottom_up_finger_rig.JPG' alt='missing' style="width: 100%; height: 100%;"/>
+                                                <figcaption>Upward view of finger against platform</figcaption>
+                                            </figure>
+										</center>
+									</div>
+								</div>
+
+								<hr>
+
+								<h2>Software</h2>
+								<ul>
+									<li style="color:black;font-size:16px;font-weight:bold">General</li>
+										<ul>
+											<li style="color:black;font-size:16px">Ubuntu 22.04 Jammy Jellyfish</li>
+											<li style="color:black;font-size:16px">ROS2 Humble Hawksbill</li>
+										</ul>
+									<li style="color:black;font-size:16px;font-weight:bold">Franka Manipulator Arm</li>
+										<ul>
+											<li style="color:black;font-size:16px">MoveIt2</li>
+											<li style="color:black;font-size:16px">franka_ros2 (ROS2 driver for Franka)</li>
+										</ul>
+									<li style="color:black;font-size:16px;font-weight:bold">Allied Vision Camera</li>
+										<ul>
+											<li style="color:black;font-size:16px">OpenCV 4.6.0</li>
+											<li style="color:black;font-size:16px">cv_bridge</li>
+											<li style="color:black;font-size:16px">Vimba SDK 6.0.0 (interface for camera)</li>
+											<li style="color:black;font-size:16px">avt_vimba_camera (ROS2 wrapper for Vimba SDK)</li>
+										</ul>									
+								</ul>
 
                                 <h2>Package Breakdown</h2>
 								<p> This project was created in the form of a ROS2 package written primarily in C++. For organization, the various
@@ -150,9 +201,15 @@
 								<h2>Motion Control</h2>
 								<p>
 									<center>
-										<div class="image main"><img src="images/franka_services_4x_speed_labeled.gif" alt="" style="max-width: 70%"/></div>
+										<figure>
+											<img src='images/franka_services_4x_speed_labeled.gif' alt='missing' style="width: 70%;"/>
+											<figcaption>Demonstration of /home service and three motion profile services (/rectangle, /circle, and /linear) being
+												called via the command line
+											</figcaption>
+										</figure>
 									</center>
-
+									
+									<br><br>
 									The motion of the Franka robot was programmed and controlled using the MoveIt2 motion planning framework.
 									The package is centered around a number of ROS2 services that allow the user to interact with and control
 									the robot for the various tasks relevant to the project. Some of these services offered basic functionality
@@ -163,64 +220,98 @@
 									that the biomimetic fingertip is resting against, then manipulating this platform to simulate as if the fingertip
 									was sliding against a stationary platform in the specified motion profile. 
 									<br><br>
-									The reasoning for fixing the fingertip in place and actuating the platform rather than the reverse was to keep 
-									the fingertip firmly in frame of the fixed camera below the platform. Due to the minute detail needed to capture
-									the deformation and slip characteristics of the fingertip, it made more sense to ensure the fingertip remained
-									squarely in the camera's view.
+									
 								</p>
 
-                                <!-- <h2>Vision</h2>
-								<p> 
-                                </p> -->
+								<h2>Computer Vision</h2>
+								<p>
+									The goal of the computer vision in this project was to develop a way of numerically evaluating the slip and
+									deformation of a biomimetic fingertip as it slides along an object (the sliding platform in this case). This was
+									done by tracking the positions of the randomized fiducial pattern on the tip of the finger during the execution
+									of the robot-actuated motion profiles.
+									<br><br>
+									The fiducial tracking was done using an algorithm made up of several common features from the OpenCV library.
+									The color image published by the camera via the <i>avt_vimba_camera</i> ROS2 driver was first converted to grayscale,
+									then thresholded by pixel intensity to highlight only the darker fiducial pattern on the lighter fingertip. This mask
+									image was then cropped to include only the center circle of the image, as this was the location of the fingertip 
+									within the frame of the camera.
 
-                                <!-- <div class="row">
-									<div class="column-2">
-										<center>
-                                            <figure>
-                                                <img src='images/realsense.jpeg' alt='missing' style="width: 100%; height: 100%;"/>
-                                                <figcaption>Point-of-view of the RealSense camera relative to playing field</figcaption>
-                                            </figure>
-										</center>
-									</div>
-									<div class="column-2">
-										<center>
-                                            <figure>
-                                                <img src='images/balltracking.jpeg' alt='missing' style="width: 100%; height: 100%;"/>
-                                                <figcaption>Screenshot of the ball being tracked in the playing field</figcaption>
-                                            </figure>
-										</center>
-									</div>
-								</div> -->
+									<br><br>
+									<center>
+										<figure>
+											<img src='images/finger_mask.gif' alt='missing' style="width: 50%;"/>
+											<figcaption>Cropped mask of test paper fiducial pattern</figcaption>
+										</figure>
+									</center>
+									<br><br>
 
-								<!-- <div class="row">
-									<div class="column-2">
-										<div class="iframe-container">
-											<iframe width="320" height="240" src="https://www.youtube.com/embed/yBchUAPhLoM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									Next, with the individual dots of the fiducial pattern clearly distinguished from the rest of the image, their
+									contours were found using OpenCV's contour detection. Possible contours were kept within a certain reasonable range
+									for the fiducial pattern to avoid any undesirable detections. Once detected, the centroids of these contours were found
+									using OpenCV's included centroid identifier. These centroids are the key component of the image that was desired as their
+									values (both globally and relative to one another) represent the movement of the surface of the fingertip.
+									
+									<br><br>
+									<center>
+										<figure>
+											<img src='images/contours.gif' alt='missing' style="width: 50%;"/>
+											<figcaption>Contour and centroid detection of test paper fiducial pattern</figcaption>
+										</figure>
+									</center>
+									<br><br>
+
+									After the centroids of the fiducial pattern are indentified, it was important to track their location as they move
+									with the finger. Without tracking, the order of identified contours may change with each frame of the video, which
+									result in a list of random coordinates each associated with some random fiducial dot. Some of the key information
+									of interest with this project is the motion of these fiducial dots relative to one another (indicating deformation).
+									<br><br>
+									Initially, an attempt was made to use a legacy OpenCV class called MultiTracker that would take an initial set of
+									areas of interest in an image in the form of bounding boxes, then track those areas of interest as the frames change 
+									over time. After struggling to get the desired results using this legacy class, and a lack of desirable documentation,
+									the decision was made to create a custom tracker from scratch. This custom tracker takes in the initially identified
+									centroid locations, then with every new frame, compares the newly detected centroids with the previous centroid locations.
+									It then assumes that if the difference between any two centroids from the two lists is very small, then they must be
+									the same centroid. This algorithm worked extremely well for the paper fiducial pattern used to test the method, as can
+									be seen in the GIF below.
+
+									<br><br>
+									<center>
+										<figure>
+											<img src='images/tracking.gif' alt='missing' style="width: 50%;"/>
+											<figcaption>Tracking of test paper fiducial pattern</figcaption>
+										</figure>
+									</center>
+									<br><br>
+
+									Though this tracking method works very well with the idealistic paper fiducial pattern, there were some issues when
+									integrating with the real prototype fingertips. Due to the lower contrast and imperfect fiducial dots, the algorithm
+									would sometimes briefly lose track of a dot. Once a centroid was briefly lost as a result of this, the tracking algorithm
+									would then forget about this dot, replace it with a duplicate of another centroid, and never regain it, even if the same 
+									centroid was then re-identified. This issue can be seen when comparing the two examples below. The first showcases the
+									ideal tracking of the paper fiducial pattern, while the second example shows the faulty tracking of the real prototype
+									finger.
+
+									<div class="row">
+										<div class="column-2">
+											<center>
+												<figure>
+													<img src='images/paper_tracking_test.gif' alt='missing' style="width: 100%;"/>
+													<figcaption>Idealistic paper fiducial pattern</figcaption>
+												</figure>
+											</center>
 										</div>
-										<style>
-											.iframe-container {
-												  text-align:center;
-													width:100%;
-											}
-										</style><br/>
+										<div class="column-2">
+											<center>
+												<figure>
+													<img src='images/finger_tracking_test.gif' alt='missing' style="width: 100%;"/>
+													<figcaption>Prototype fingertip fiducial pattern</figcaption>
+												</figure>
+											</center>
+										</div>
 									</div>
-									<div class="column-2">
-										<center>
-                                            <p>This brief video demonstrates the use of OpenCV to locate the ball and 
-												determine the location of its centroid. Once determined, the ball is 
-												marked at its centroid and a bounding box placed around it.</p>
-										</center>
-									</div>
-								</div> -->
-
-								<!-- <h2>Motion Control</h2>
-								<p> 
-                                </p> -->
-
-								<!-- <h3>The RoboKeeper Team!</h3>
-								<center>
-									<img src='images/robokeeper_team.jpg' alt='missing' style="width: 100%; height: 100%;"/>
-								</center> -->
+	
+									<br><br>
+								</p>
 
                                 <h1 style="text-align:center"><a href="https://github.com/codynichoson/FingerTestingRig" target="_blank">View on GitHub!</a></h1>
 							</section>
